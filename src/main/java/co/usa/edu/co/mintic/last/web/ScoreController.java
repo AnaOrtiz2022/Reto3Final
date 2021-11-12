@@ -10,16 +10,15 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *
  * @author ana_o
  */
+@RestController
+@RequestMapping("/api/Score")
+@CrossOrigin(origins = "*", methods={RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class ScoreController {
     
     @Autowired
@@ -27,7 +26,7 @@ public class ScoreController {
     
     //Get 
     @GetMapping ("/all")
-    public List<Score> getReservation(){
+    public List<Score> getScore(){
         return scoreService.getAll();
     }
     
@@ -39,7 +38,7 @@ public class ScoreController {
      * @return
      */
     @GetMapping("/{id}")
-    public Optional<Score> getReservation(@PathVariable ("id") int id){
+    public Optional<Score> getScore(@PathVariable ("id") int id){
         return scoreService.getScore(id);
     }
     
