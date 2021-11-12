@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/Car")
-@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
+@CrossOrigin (origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class CarController {
     
     @Autowired
@@ -40,12 +40,12 @@ public class CarController {
 
     /**
      *
-     * @param idCar
+     * @param id
      * @return
      */
     @GetMapping("/{id}")
-    public Optional<Car> getCar(@PathVariable ("id") int idCar){
-        return carService.getCar(idCar);
+    public Optional<Car> getCar(@PathVariable ("id") int id){
+        return carService.getCar(id);
     }
     
     //Post 

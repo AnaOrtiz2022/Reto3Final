@@ -24,7 +24,7 @@ public class Score implements Serializable {
     private String textScore;
     
     @OneToOne
-    private Reservation reservations;
+    private Reservation reservation;
 
     public Integer getIdScore() {
         return idScore;
@@ -51,10 +51,10 @@ public class Score implements Serializable {
     }
 
     public Reservation getReservation() {
-        return reservations;
+        return reservation;
     }
 
-    public void setReservation(Reservation reservations) {
-        this.reservations = reservations;
+    public void setReservation(Reservation reservation) {
+        this.reservation = reservation;
     }      
 }

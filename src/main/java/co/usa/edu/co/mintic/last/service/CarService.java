@@ -34,16 +34,16 @@ public class CarService {
         return carRepository.getCar(idCar);
     }
     public Car save(Car c){ 
-       if(null== c.getIdCar()){
+        if (c.getIdCar() == null){
            return carRepository.save(c);    
-       }else{
+        }else{
            Optional<Car> auxiliarCar = carRepository.getCar(c.getIdCar());
-           if (auxiliarCar.isEmpty()){
+            if (auxiliarCar.isEmpty()){
                return carRepository.save(c);
-           }else{
+            }else{
                return c;
-           }
-       }
-   }   
+            }    
+        }
+    }   
 }
 

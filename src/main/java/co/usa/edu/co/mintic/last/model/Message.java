@@ -33,6 +33,12 @@ public class Message implements Serializable{
         this.car = car;
     }
 
+
+    @ManyToOne
+    @JoinColumn(name ="idClient")
+    @JsonIgnoreProperties({"messages", "reservations", "client"})
+    private Client client;
+    
     public Client getClient() {
         return client;
     }
@@ -41,10 +47,6 @@ public class Message implements Serializable{
         this.client = client;
     }
     
-    @ManyToOne
-    @JoinColumn(name ="idClient")
-    @JsonIgnoreProperties({"messages", "reservations", "client"})
-    private Client client;
 
     public Integer getIdMessage() {
         return idMessage;
