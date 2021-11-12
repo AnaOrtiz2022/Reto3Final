@@ -72,7 +72,7 @@ public class Car implements Serializable{
     }
 
     public void setReservation(List<Reservation> reservation) {
-        this.reservations = reservations;
+        this.reservations = reservation;
     }
     
     public Integer getIdCar() {

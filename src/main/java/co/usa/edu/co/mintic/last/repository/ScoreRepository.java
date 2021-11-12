@@ -9,11 +9,13 @@ import co.usa.edu.co.mintic.last.repositoryCrud.ScoreRepositoryCrud;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author ana_o
  */
+@Repository
 public class ScoreRepository {
     @Autowired
     private ScoreRepositoryCrud scoreRepositoryCrud;
