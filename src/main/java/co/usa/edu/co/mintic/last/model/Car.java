@@ -21,9 +21,9 @@ public class Car implements Serializable{
     Indica id
     */
     private Integer idCar;
-    /*
-    Indica brand
-    */
+
+    private String name;
+    
     private String brand;
     /*
     Indica year
@@ -36,7 +36,7 @@ public class Car implements Serializable{
     
     @ManyToOne
     @JoinColumn(name ="idGama")
-    @JsonIgnoreProperties("car")
+    @JsonIgnoreProperties("cars")
     /*
     indica gama
     */
@@ -44,7 +44,8 @@ public class Car implements Serializable{
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="car")
     @JsonIgnoreProperties({"car" , "client"})
-    private List<Message> message;
+    
+    private List<Message> messages;
     
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="car")
@@ -52,26 +53,26 @@ public class Car implements Serializable{
     /*
     Lista message
     */
-    private List<Reservation> reservation;
+    private List<Reservation> reservations;
 
     
     public List<Message> getMessage() {
-        return message;
+        return messages;
     }
 
     public void setMessage(List<Message> message) {
-        this.message = message;
+        this.messages = message;
     }
 
     /*
     LISTA RESERVATION
     */
     public List<Reservation> getReservation() {
-        return reservation;
+        return reservations;
     }
 
     public void setReservation(List<Reservation> reservation) {
-        this.reservation = reservation;
+        this.reservations = reservations;
     }
     
     public Integer getIdCar() {
@@ -112,5 +113,11 @@ public class Car implements Serializable{
     
     public void setGama(Gama gama) {
         this.gama = gama;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 }

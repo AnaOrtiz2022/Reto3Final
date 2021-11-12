@@ -26,7 +26,7 @@ public class MessageController {
     
     //Get 
     @GetMapping ("/all")
-    public List<Message> getClient(){
+    public List<Message> getMessage(){
         return messageService.getAll();
     }
     
@@ -34,7 +34,7 @@ public class MessageController {
 
     /**
      *
-     * @param messageId
+     * @param id
      * @return
      */
     @GetMapping("/{id}")

@@ -38,7 +38,7 @@ public class ClientController {
      * @return
      */
     @GetMapping("/{id}")
-    public Optional<Client> getCar(@PathVariable ("id") int id){
+    public Optional<Client> getClient(@PathVariable ("id") int id){
         return clientService.getClient(id);
     }
     
