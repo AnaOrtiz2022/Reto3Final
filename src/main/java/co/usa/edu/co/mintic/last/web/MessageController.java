@@ -37,9 +37,9 @@ public class MessageController {
      * @param messageId
      * @return
      */
-    @GetMapping("/{messageId}")
-    public Optional<Message> getCar(@PathVariable ("messageId") int messageId){
-        return messageService.getMessage(messageId);
+    @GetMapping("/{id}")
+    public Optional<Message> getCar(@PathVariable ("id") int id){
+        return messageService.getMessage(id);
     }
     
     //Post 

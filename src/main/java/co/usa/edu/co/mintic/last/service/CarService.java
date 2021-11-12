@@ -27,14 +27,14 @@ public class CarService {
      * @return
      */
     public List<Car> getAll(){
-        return (List<Car>) carRepository.getAll();
+        return carRepository.getAll();
     }
     
-    public Optional<Car> getCar(int idCar){
+    public Optional<Car> getCar(Integer idCar){
         return carRepository.getCar(idCar);
     }
     public Car save(Car c){ 
-       if(c.getIdCar()== null){
+       if(null== c.getIdCar()){
            return carRepository.save(c);    
        }else{
            Optional<Car> auxiliarCar = carRepository.getCar(c.getIdCar());

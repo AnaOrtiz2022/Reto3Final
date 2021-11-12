@@ -19,11 +19,11 @@ public class Client implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer clientId;
-    private String clientName;
-    private String clientEmail;
-    private Integer clientAge;
-    private String clientPassword;
+    private Integer idClient;
+    private String name;
+    private String email;
+    private Integer age;
+    private String password;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
     @JsonIgnoreProperties("client")
@@ -49,43 +49,43 @@ public class Client implements Serializable{
     @JsonIgnoreProperties("client")
     private List<Reservation> reservations;
 
-    public Integer getClientId() {
-        return clientId;
+    public Integer getIdClient() {
+        return idClient;
     }
 
     public void setClientId(int clientId) {
-        this.clientId = clientId;
+        this.idClient = clientId;
     }
 
-    public String getClientName() {
-        return clientName;
+    public String getName() {
+        return name;
     }
 
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getClientEmail() {
-        return clientEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setClientEmail(String clientEmail) {
-        this.clientEmail = clientEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public Integer getClientAge() {
-        return clientAge;
+    public Integer getAge() {
+        return age;
     }
 
     public void setClientAge(int clientAge) {
-        this.clientAge = clientAge;
+        this.age = clientAge;
     }
 
-    public String getClientPassword() {
-        return clientPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setClientPassword(String clientPassword) {
-        this.clientPassword = clientPassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

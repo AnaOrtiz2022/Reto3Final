@@ -19,8 +19,8 @@ public class Gama implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idGama;
-    private String gamaName;
-    private String gamaDescription;
+    private String name;
+    private String description;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="gama")
     @JsonIgnoreProperties("gama")
@@ -43,19 +43,19 @@ public class Gama implements Serializable {
     }
 
 
-    public String getGamaName() {
-        return gamaName;
+    public String getName() {
+        return name;
     }
 
-    public void setGamaName(String gamaName) {
-        this.gamaName = gamaName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getGamaDescription() {
-        return gamaDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setGamaDescription(String gamaDescription) {
-        this.gamaDescription = gamaDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

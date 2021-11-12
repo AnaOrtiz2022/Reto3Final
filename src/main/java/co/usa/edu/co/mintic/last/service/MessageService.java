@@ -22,10 +22,15 @@ public class MessageService {
     private MessageRepository messageRepository;
     
     public List<Message> getAll(){
-        return (List<Message>) messageRepository.getAll();
+        return messageRepository.getAll();
     }
     
-    public Optional<Message> getMessage(int idMessage){
+    /**
+     *
+     * @param idMessage
+     * @return
+     */
+    public Optional<Message> getMessage(Integer idMessage){
         return messageRepository.getMessage(idMessage);
     }
     

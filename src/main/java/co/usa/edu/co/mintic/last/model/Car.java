@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package co.usa.edu.co.mintic.last.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -20,25 +16,45 @@ public class Car implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCar;
-    private String brand;
-    private Integer model;
-    private Integer categoryId;
     
+    /*
+    Indica id
+    */
+    private Integer idCar;
+    /*
+    Indica brand
+    */
+    private String brand;
+    /*
+    Indica year
+    */
+    private Integer year;
+    /*
+    Indica category
+    */
+    private String description;
     
     @ManyToOne
     @JoinColumn(name ="idGama")
     @JsonIgnoreProperties("car")
+    /*
+    indica gama
+    */
     private Gama gama;
+    
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="car")
+    @JsonIgnoreProperties({"car" , "client"})
+    private List<Message> message;
+    
+    
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="car")
+    @JsonIgnoreProperties({"car" , "client"})
+    /*
+    Lista message
+    */
+    private List<Reservation> reservation;
 
-    public Gama getGama() {
-        return gama;
-    }
-
-    public void setGama(Gama gama) {
-        this.gama = gama;
-    }
-
+    
     public List<Message> getMessage() {
         return message;
     }
@@ -47,6 +63,9 @@ public class Car implements Serializable{
         this.message = message;
     }
 
+    /*
+    LISTA RESERVATION
+    */
     public List<Reservation> getReservation() {
         return reservation;
     }
@@ -54,17 +73,7 @@ public class Car implements Serializable{
     public void setReservation(List<Reservation> reservation) {
         this.reservation = reservation;
     }
-
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="car")
-    @JsonIgnoreProperties({"car" , "client"})
     
-    private List<Message> message;
-    
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="car")
-    @JsonIgnoreProperties({"car" , "client"})
-    
-    private List<Reservation> reservation;
-
     public Integer getIdCar() {
         return idCar;
     }
@@ -81,19 +90,27 @@ public class Car implements Serializable{
         this.brand = brand;
     }
 
-    public Integer getModel() {
-        return model;
+    public Integer getYear() {
+        return year;
     }
 
-    public void setModel(Integer model) {
-        this.model = model;
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
-    public Integer getCategoryId() {
-        return categoryId;
+    public String getDescription() {
+        return description;
     }
 
-    public void setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    public Gama getGama() {
+        return gama;
+    }
+    
+    public void setGama(Gama gama) {
+        this.gama = gama;
     }
 }

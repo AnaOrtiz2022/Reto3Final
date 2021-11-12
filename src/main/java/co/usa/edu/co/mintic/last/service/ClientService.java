@@ -23,18 +23,18 @@ public class ClientService {
     private ClientRepository clientRepository;
     
     public List<Client> getAll(){
-        return (List<Client>) clientRepository.getAll();
+        return clientRepository.getAll();
     }
     
-    public Optional<Client> getClient(int clientId){
+    public Optional<Client> getClient(Integer clientId){
         return clientRepository.getClient(clientId);
     }
     
     public Client save(Client cl){
-       if(cl.getClientId()== null){
+       if(cl.getIdClient()== null){
             return clientRepository.save(cl);
        }else{
-            Optional<Client> auxiliarClient = clientRepository.getClient(cl.getClientId());
+            Optional<Client> auxiliarClient = clientRepository.getClient(cl.getIdClient());
             if (auxiliarClient.isEmpty()){
                 return clientRepository.save(cl);
             }else{

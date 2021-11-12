@@ -34,12 +34,12 @@ public class ClientController {
 
     /**
      *
-     * @param clientId
+     * @param id
      * @return
      */
-    @GetMapping("/{clientId}")
-    public Optional<Client> getCar(@PathVariable ("clientId") int clientId){
-        return clientService.getClient(clientId);
+    @GetMapping("/{id}")
+    public Optional<Client> getCar(@PathVariable ("id") int id){
+        return clientService.getClient(id);
     }
     
     //Post 

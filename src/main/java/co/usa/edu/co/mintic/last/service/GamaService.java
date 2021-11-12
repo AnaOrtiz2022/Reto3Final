@@ -22,10 +22,15 @@ public class GamaService {
     private GamaRepository gamaRepository;
     
     public List<Gama> getAll(){
-        return (List<Gama>) gamaRepository.getAll();
+        return gamaRepository.getAll();
     }
     
-    public Optional<Gama> getGama(int idGama){
+    /**
+     *
+     * @param idGama
+     * @return
+     */
+    public Optional<Gama> getGama(Integer idGama){
             return gamaRepository.getGama(idGama);
         }
     public Gama save (Gama g){

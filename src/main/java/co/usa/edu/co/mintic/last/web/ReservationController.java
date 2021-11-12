@@ -34,12 +34,12 @@ public class ReservationController {
 
     /**
      *
-     * @param idReservation
+     * @param id
      * @return
      */
-    @GetMapping("/{idCar}")
-    public Optional<Reservation> getCar(@PathVariable ("idReservation") int idReservation){
-        return reservationService.getReservation(idReservation);
+    @GetMapping("/{id}")
+    public Optional<Reservation> getCar(@PathVariable ("id") int id){
+        return reservationService.getReservation(id);
     }
     
     //Post 

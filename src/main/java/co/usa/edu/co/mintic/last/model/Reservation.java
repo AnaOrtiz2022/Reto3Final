@@ -20,19 +20,19 @@ public class Reservation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
-    private Date StartDate;
+    private Date startDate;
     private Date devolutionDate;
     private String status="created"; 
 
     
     @ManyToOne
     @JoinColumn(name ="idCar")
-    @JsonIgnoreProperties("reservations")
+    @JsonIgnoreProperties("reservation")
     private Car car;
     
     @ManyToOne
     @JoinColumn(name ="idClient")
-    @JsonIgnoreProperties({"reservations", "messages"})
+    @JsonIgnoreProperties({"reservation", "message"})
     private Client client;
 
     public Integer getIdReservation() {
@@ -61,11 +61,11 @@ public class Reservation implements Serializable {
     }
 
     public Date getStartDate() {
-        return StartDate;
+        return startDate;
     }
 
     public void setStartDate(Date StartDate) {
-        this.StartDate = StartDate;
+        this.startDate = StartDate;
     }
 
     public Date getDevolutionDate() {

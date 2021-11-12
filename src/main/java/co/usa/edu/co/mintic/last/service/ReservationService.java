@@ -26,11 +26,16 @@ public class ReservationService {
      * @return
      */
     public List<Reservation> getAll(){
-        return (List<Reservation>) reservationRepository.getAll();
+        return reservationRepository.getAll();
     }
     
-    public Optional<Reservation> getReservation(int idReservation){
-        return reservationRepository.getReservation(idReservation);
+    /**
+     *
+     * @param id
+     * @return
+     */
+    public Optional<Reservation> getReservation(Integer id){
+        return reservationRepository.getReservation(id);
     }
     public Reservation save(Reservation r){ 
        if(r.getIdReservation()== null){

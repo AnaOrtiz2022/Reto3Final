@@ -35,12 +35,12 @@ public class GamaController {
 
     /**
      *
-     * @param idGama
+     * @param id
      * @return
      */
-    @GetMapping("/{idGama}")
-    public Optional<Gama> getGama(@PathVariable ("idGama") int idGama){
-        return gamaService.getGama(idGama);
+    @GetMapping("/{id}")
+    public Optional<Gama> getGama(@PathVariable ("id") int id){
+        return gamaService.getGama(id);
     }
     
     //Post

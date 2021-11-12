@@ -43,8 +43,8 @@ public class CarController {
      * @param idCar
      * @return
      */
-    @GetMapping("/{idCar}")
-    public Optional<Car> getCar(@PathVariable ("idCar") int idCar){
+    @GetMapping("/{id}")
+    public Optional<Car> getCar(@PathVariable ("id") int idCar){
         return carService.getCar(idCar);
     }
     
