@@ -9,11 +9,13 @@ import co.usa.edu.co.mintic.last.repository.ScoreRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author ana_o
  */
+@Service
 public class ScoreService {
         
     @Autowired
